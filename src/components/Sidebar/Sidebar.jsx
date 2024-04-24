@@ -1,14 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { menuItemsAdmin } from "./SidebarData";
 import { FaRightFromBracket } from "react-icons/fa6";
+import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const { setToken, setRole, setUser } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
   const location = useLocation();
-  const navigate = useNavigate();
-  console.log(menuItemsAdmin);
+  const logoutHandler = () => {
+    localStorage.clear();
+    dispatch(setToken(null));
+    dispatch(setRole(null));
+    dispatch(setUser(null));
+    toast.success("Logout Successful");
+  };
 
   return (
     <div
@@ -42,8 +51,8 @@ const Sidebar = () => {
                 title={menu.title}
                 className={`h-10 flex items-center gap-x-4 cursor-pointer py-2 duration-300 rounded-md ${
                   location.pathname === menu.path
-                    ? "bg-pink text-white"
-                    : "text-gray-300 hover:bg-slate-600"
+                    ? "bg-slate-900 text-white"
+                    : "text-gray-300 hover:bg-slate-900"
                 }`}
               >
                 <div className="">{<menu.icon className="w-10" />}</div>
@@ -60,17 +69,12 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="flex flex-col gap-4 pt-6">
-        <NavLink
-          onClick={() => {
-            localStorage.clear();
-            navigate("/");
-          }}
-          title={"Logout"}
-          className={`h-10 flex items-center gap-x-4 cursor-pointer py-2 duration-300 rounded-md`}
+        <Link
+          onClick={logoutHandler}
+          to={"/"}
+          className={`h-10 flex items-center gap-x-4 cursor-pointer py-2 duration-300 rounded-md bg-slate-900 text-red-500`}
         >
-          <div className="">
-            <FaRightFromBracket className="w-10" />
-          </div>
+          <FaRightFromBracket className="w-10" />
           <span
             className={`${
               !open ? "scale-x-0" : "scale-x-100"
@@ -78,7 +82,7 @@ const Sidebar = () => {
           >
             Logout
           </span>
-        </NavLink>
+        </Link>
       </div>
     </div>
   );

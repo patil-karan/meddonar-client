@@ -1,4 +1,4 @@
-import { FaProductHunt } from "react-icons/fa6";
+import { FaBriefcase,FaBriefcaseMedical,FaCartShopping  } from "react-icons/fa6";
 import { BiSolidDashboard } from "react-icons/bi";
 
 export const menuItemsAdmin = [
@@ -9,17 +9,17 @@ export const menuItemsAdmin = [
   },
   {
     title: "Add Products",
-    icon: FaProductHunt,
-    path: "/admin/product/create",
+    icon: FaBriefcaseMedical,
+    path: "/admin/add-product",
   },
   {
     title: "Products",
-    icon: BiSolidDashboard,
+    icon: FaBriefcase,
     path: "/admin/products",
   },
   {
     title: "Orders",
-    icon: BiSolidDashboard,
+    icon: FaCartShopping,
     path: "/admin/orders",
   },
 ];

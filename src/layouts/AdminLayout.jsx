@@ -1,22 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { FaCircleUser } from "react-icons/fa6";
-// import ProductsTable from "../Admin/components/ProductsTable";
-// import OrdersTable from "../Admin/components/OrdersTable";
-// import CreateProductForm from "../Admin/components/CreateProductForm";
-// import CustomersTable from "../Admin/components/CustomersTable";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Header from "../components/Header";
-// import Product from "../customer/components/Product/Product";
-// import AddVolunteer from "../customer/components/AddVolunteer/AddVolunteer";
-// import BloodCamp from "../customer/components/BloodCamp/BloodCamp";
-// import BecomePartner from "../customer/components/BecomePartner/BecomePartner";
-// import Donate from "../customer/components/Donate/Donate";
-// import DonateMed from "../customer/components/Donate/DonateMed";
-// import ProductDetails from "../customer/components/ProductDetails/ProductDetails";
 
-const AdminLayout = ({ setAuthenticated }) => {
+const AdminLayout = () => {
   const location = useLocation();
   // Get the path of the current route
   const currentPath = location.pathname;
