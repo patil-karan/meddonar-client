@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaXmark } from "react-icons/fa6";
+import AvatarMenu from "./AvatarMenu";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { user, role, token } = useSelector((state) => state.auth);
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const closeNavbar = () => {
@@ -51,13 +54,19 @@ const Navbar = () => {
             className="nav-link relative"
             onClick={closeNavbar}
           >
-            AboutUs
+            About
           </NavLink>
-          <Link to="/login" onClick={closeNavbar}>
-            <button className="btn-transition bg-yellow px-4 py-2 rounded-lg font-bold border border-yellow hover:border-yellow hover:bg-white shadow-lg hover:text-yellow">
-              Log In
-            </button>
-          </Link>
+          {token && role == "USER" ? (
+            <AvatarMenu user={user} />
+          ) : (
+            <>
+              <Link to="/login" onClick={closeNavbar}>
+                <button className="btn-transition bg-yellow px-4 py-2 rounded-lg font-bold border border-yellow hover:border-yellow hover:bg-white shadow-lg hover:text-yellow">
+                  Log In
+                </button>
+              </Link>
+            </>
+          )}
         </div>
         <div
           id="nav-toggle"

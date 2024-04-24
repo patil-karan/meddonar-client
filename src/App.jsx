@@ -11,6 +11,7 @@ import Products from "./components/Products";
 import Orders from "./components/Orders";
 import AdminLogin from "./pages/AdminLogin";
 import ManageProduct from "./components/ManageProduct";
+import Login from "./pages/Login";
 
 function App() {
   const { token, role } = useSelector((state) => state.auth);
@@ -24,7 +25,7 @@ function App() {
           <Route path="/about" element={<>About</>} />
           {token ? null : (
             <>
-              <Route path="/login" element={<>Login</>} />
+              <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<>Sign Up</>} />
             </>
           )}
