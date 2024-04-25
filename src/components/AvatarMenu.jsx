@@ -14,6 +14,7 @@ function AvatarMenu({ user, setStates }) {
 
   const navigation = [
     { title: "My Cart", path: "/cart" },
+    { title: "Become Volunteer", path: "/become-volunteer" },
     { title: "Orders", path: "/orders" },
   ];
 

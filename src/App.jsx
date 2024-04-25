@@ -12,6 +12,13 @@ import Orders from "./components/Orders";
 import AdminLogin from "./pages/AdminLogin";
 import ManageProduct from "./components/ManageProduct";
 import Login from "./pages/Login";
+import HomePage from "./pages/HomePage";
+import { AboutUs } from "./pages/AboutUs";
+import AddVolunteer from "./components/AddVolunteer";
+import DonateMedicine from "./components/DonateMedicine";
+import AllProducts from "./pages/AllProducts";
+import Cart from "./pages/Cart";
+import SignUp from "./pages/SignUp";
 
 function App() {
   const { token, role } = useSelector((state) => state.auth);
@@ -21,15 +28,23 @@ function App() {
       <Toaster position="top-center" reverseOrder={false} />
       <Routes>
         <Route path="/" element={<MasterLayout />}>
-          <Route index={true} element={<>Home</>} />
-          <Route path="/about" element={<>About</>} />
+          <Route index={true} element={<HomePage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/medicines" element={<AllProducts />} />
+
           {token ? null : (
             <>
               <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<>Sign Up</>} />
+              <Route path="/signup" element={<SignUp/>} />
             </>
           )}
-          {token && <Route path="/cart" element={<>Add To Cart</>} />}
+          {token && <Route path="/cart" element={<Cart />} />}
+          {token && (
+            <Route path="/become-volunteer" element={<AddVolunteer />} />
+          )}
+          {token && (
+            <Route path="/donate" element={<DonateMedicine />} />
+          )}
           {token && <Route path="/orders" element={<>Orders</>} />}
           {token && <Route path="/checkout" element={<>Checkout</>} />}
           <Route path="/products" element={<>Products</>} />

@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="relative flex flex-row items-center top-0 justify-between bg-white h-[64px] max-sm:px-4 w-full z-50 px-14">
+      <nav className="relative flex flex-row items-center top-0 justify-between  bg-gray-200 h-[64px] max-sm:px-4 w-full z-50 px-14">
         {/* Overlay to blur the content */}
         {isNavOpen && (
           <div
@@ -49,6 +49,18 @@ const Navbar = () => {
           <NavLink to="/" className="nav-link relative" onClick={closeNavbar}>
             Home
           </NavLink>
+          <NavLink to="/medicines" className="nav-link relative" onClick={closeNavbar}>
+            Medicines
+          </NavLink>
+          {token ? (
+            <NavLink
+              to="/donate"
+              className="nav-link relative"
+              onClick={closeNavbar}
+            >
+              Donate
+            </NavLink>
+          ) : null}
           <NavLink
             to="/about"
             className="nav-link relative"

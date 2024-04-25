@@ -125,11 +125,7 @@ function Login() {
                   id="remember-me-checkbox"
                   className="checkbox-item peer hidden"
                 />
-                <label
-                  htmlFor="remember-me-checkbox"
-                  className="relative flex w-5 h-5 bg-white peer-checked:bg-red-600 rounded-md border ring-offset-2 ring-red-600 duration-150 peer-active:ring cursor-pointer after:absolute after:inset-x-0 after:top-[3px] after:m-auto after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45"
-                ></label>
-                <span>Remember me</span>
+               
               </div>
               <Link
                 to="/forgotpassword"
