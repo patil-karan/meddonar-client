@@ -13,7 +13,6 @@ function AvatarMenu({ user, setStates }) {
   const Avatar = name[0].charAt(0) + name[1].charAt(0);
 
   const navigation = [
-    { title: "My Cart", path: "/cart" },
     { title: "Become Volunteer", path: "/become-volunteer" },
     { title: "Orders", path: "/orders" },
   ];

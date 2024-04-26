@@ -1,20 +1,15 @@
 import React, { useState } from "react";
-// import React, { useState } from "react";
-import { Link } from "react-router-dom";
-//import AvatarMenu from "../Navigation/AvatarMenu";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { setRole, setToken, setUser } from "../features/auth/authSlice";
 
 function Login() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  // const form = useForm();
-  // const { register, handleSubmit, formState } = form;
-  // const { errors } = formState;
 
   const inputChangeHandler = (id, value) => {
     if (id === "username") {
@@ -24,7 +19,6 @@ function Login() {
     }
   };
 
-  // Login component
   const loginHandler = async () => {
     await axios
       .post("http://localhost:8081/auth/signin", {
@@ -35,7 +29,6 @@ function Login() {
         console.log(res.data);
         const { jwt, role } = res.data;
         // Decode JWT token to extract email
-
         try {
           const [, payloadBase64] = jwt.split(".");
           const payloadJson = atob(payloadBase64);
@@ -65,6 +58,7 @@ function Login() {
             dispatch(
               setUser(result.data.firstName + " " + result.data.lastName)
             );
+            navigate("/");
             toast.success("Login Success");
           } else {
             toast.error("Unauthorized Access");
@@ -125,7 +119,6 @@ function Login() {
                   id="remember-me-checkbox"
                   className="checkbox-item peer hidden"
                 />
-               
               </div>
               <Link
                 to="/forgotpassword"

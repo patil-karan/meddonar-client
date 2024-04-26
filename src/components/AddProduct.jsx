@@ -1,11 +1,6 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { getAxiosInstance } from "../utility/axiosApiConfig";
-
-import { Switch } from "@headlessui/react";
-
-// const axiosInstance = getAxiosInstance();
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -48,7 +43,6 @@ function AddProduct() {
     console.log(productData);
     // Axios request
     const axiosInstance = getAxiosInstance();
-    console.log(axiosInstance);
     try {
       const response = await axiosInstance.post(
         "/api/admin/product/",

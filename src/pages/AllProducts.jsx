@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function AllProducts() {
   const [medicines, setMedicines] = useState();
@@ -36,11 +37,14 @@ function AllProducts() {
           ?.filter((item) => {
             return search.toLowerCase() === ""
               ? item
-              : item.title.toLowerCase().includes(search) || item.brand.toLowerCase().includes(search) || item.category.categoryName.toLowerCase().includes(search);
+              : item.title.toLowerCase().includes(search) ||
+                  item.brand.toLowerCase().includes(search) ||
+                  item.category.categoryName.toLowerCase().includes(search);
           })
           .map((item) => (
-            <div
+            <Link
               key={item.id}
+              to={`/medicines/${item.id}`}
               className="flex flex-col space-y-1 h-fit w-fit bg-slate-100 rounded p-2 border"
             >
               <div className="h-56 w-56">
@@ -57,7 +61,7 @@ function AllProducts() {
                   <p className="text-sm">In Stock</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
 
         {/* Product Cart End */}

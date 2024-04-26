@@ -30,11 +30,7 @@ function Products() {
 
   const fetchData = async () => {
     await axios
-      .get("http://localhost:8081/api/admin/product/all", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .get("http://localhost:8081/products/all", {})
       .then((res) => {
         const data = res.data;
         setTableItems(data);

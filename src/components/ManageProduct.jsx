@@ -16,9 +16,10 @@ function ManageProduct() {
   const [description, setDescription] = useState("");
   const [power, setPower] = useState([]);
   const addPowerHandler = () => {
-    setPower([...power, { powers: 0, quantity: 0 }]);
+    setPower([...power, { powers: null, quantity: null }]);
   };
 
+  // console.log(categoryId);
   const removePowerHandler = (index) => {
     const newPower = [...power];
     newPower.splice(index, 1);
@@ -39,10 +40,10 @@ function ManageProduct() {
       brand,
       quantity: Number(quantity),
       categoryName,
-      description,
-      power,
+      discription: description,
+      powers: Object.values(power),
     };
-    console.log(productData);
+    // console.log(productData);
     // Axios request
     const axiosInstance = getAxiosInstance();
     try {
@@ -63,7 +64,7 @@ function ManageProduct() {
   const fetchData = async () => {
     const axiosInstance = getAxiosInstance();
     await axiosInstance
-      .get(`http://localhost:8081/api/products/id/${pathname.substring(22)}`)
+      .get(`http://localhost:8081/products/id/${pathname.substring(22)}`)
       .then((res) => {
         setImageUrl(res.data.imageUrl);
         setTitle(res.data.title);
@@ -193,7 +194,6 @@ function ManageProduct() {
                 onChange={(e) => {
                   setCategoryName(e.target.value);
                 }}
-                defaultValue={categoryName}
                 value={categoryName}
               >
                 <option value="">Select</option>
@@ -235,11 +235,11 @@ function ManageProduct() {
               </button>
             </div>
 
-            {power.map((data, idx) => {
+            {power.map((data, i) => {
               return (
                 <div
                   className="flex items-center justify-between gap-x-5 mt-4"
-                  key={idx}
+                  key={i}
                 >
                   <div>
                     <label
