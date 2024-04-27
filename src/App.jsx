@@ -8,7 +8,6 @@ import AdminLayout from "./layouts/AdminLayout";
 import Dashboard from "./components/Dashboard";
 import AddProduct from "./components/AddProduct";
 import Products from "./components/Products";
-import Orders from "./components/Orders";
 import AdminLogin from "./pages/AdminLogin";
 import ManageProduct from "./components/ManageProduct";
 import Login from "./pages/Login";
@@ -17,9 +16,13 @@ import { AboutUs } from "./pages/AboutUs";
 import AddVolunteer from "./components/AddVolunteer";
 import DonateMedicine from "./components/DonateMedicine";
 import AllProducts from "./pages/AllProducts";
-import Cart from "./pages/Cart";
+// import Cart from "./pages/Cart";
 import SignUp from "./pages/SignUp";
 import ViewProduct from "./components/ViewProduct";
+import Checkout from "./components/Checkout";
+import PlaceOrder from "./components/PlaceOrder";
+import AllOrders from "./components/AllOrders";
+import ManageOrders from "./components/ManageOrders";
 
 function App() {
   const { token, role } = useSelector((state) => state.auth);
@@ -46,8 +49,9 @@ function App() {
           {token && (
             <Route path="/donate" element={<DonateMedicine />} />
           )}
-          {token && <Route path="/orders" element={<>Orders</>} />}
-          {token && <Route path="/checkout" element={<>Checkout</>} />}
+          {token && <Route path="/confirm-order" element={<PlaceOrder />} />}
+          {token && <Route path="/orders" element={<AllOrders />} />}
+          {token && <Route path="/checkout" element={<Checkout />} />}
           <Route path="/products" element={<>Products</>} />
         </Route>
         <Route
@@ -59,7 +63,7 @@ function App() {
               <Route path="/admin" element={<Dashboard />} />
               <Route path="/admin/add-product" element={<AddProduct />} />
               <Route path="/admin/products" element={<Products />} />
-              <Route path="/admin/orders" element={<Orders />} />
+              <Route path="/admin/orders" element={<ManageOrders />} />
               <Route
                 path="/admin/manage-product/:id"
                 element={<ManageProduct />}

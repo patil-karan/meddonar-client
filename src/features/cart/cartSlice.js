@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  id: null,
-  quantity: null,
-  power: null,
-  shippingAddress: {},
+  id: localStorage.getItem("productId"),
+  quantity: localStorage.getItem("cartQuantity"),
+  power: localStorage.getItem("cartPower"),
+  shippingAddress: localStorage.getItem("shippingAddress"),
 };
 
 const cartSlice = createSlice({
@@ -21,7 +21,7 @@ const cartSlice = createSlice({
       state.power = action.payload;
     },
     setShippingAddress: (state, action) => {
-      state.shippingAddress = { ...action.payload };
+      state.shippingAddress = action.payload;
     },
   },
 });

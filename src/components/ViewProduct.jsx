@@ -1,20 +1,29 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { setCartId, setCartPower, setCartQuantity } from "../features/cart/cartSlice";
+import {
+  setCartId,
+  setCartPower,
+  setCartQuantity,
+} from "../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ViewProduct() {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [power, setPower] = useState(1);
 
   const orderHandler = (productId) => {
+    localStorage.setItem("productId", productId);
+    localStorage.setItem("cartQuantity", quantity);
+    localStorage.setItem("cartPower", power);
     dispatch(setCartId(productId));
     dispatch(setCartQuantity(quantity));
     dispatch(setCartPower(power));
+    navigate("/checkout");
   };
 
   const fetchData = async () => {

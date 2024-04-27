@@ -73,7 +73,7 @@ export default function DonateMedicine() {
               htmlFor="last-name"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Last name
+              Brand
             </label>
             <div className="mt-2.5">
               <input
@@ -90,7 +90,7 @@ export default function DonateMedicine() {
               htmlFor="gender"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Gender
+              Category
             </label>
             <div className="mt-2.5">
               <input
