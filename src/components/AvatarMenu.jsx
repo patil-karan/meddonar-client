@@ -14,7 +14,8 @@ function AvatarMenu({ user, setStates }) {
 
   const navigation = [
     { title: "Become Volunteer", path: "/become-volunteer" },
-    { title: "Orders", path: "/orders" },
+    { title: "Home Remedies", path: "/home-remedies" },
+    { title: "Orders", path: "/orders" }
   ];
 
   const logoutHandler = () => {

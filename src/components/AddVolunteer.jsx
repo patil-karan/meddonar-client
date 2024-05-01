@@ -1,12 +1,26 @@
 import React from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom"; 
 import { getAxiosInstance } from "../utility/axiosApiConfig";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function AddVolunteer() {
+export default function DonateMedicine() {
+  const navigate = useNavigate(); 
+  const handleVolunteerClick = () => {
+    toast.success("You have successfully become a volunteer!", {
+      position: "top-right",
+      autoClose: 3000, // Close the toast after 3 seconds
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+    navigate('/'); 
+  };
   const axiosInstance = getAxiosInstance();
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
@@ -156,7 +170,8 @@ export default function AddVolunteer() {
           <button
             type="submit"
             className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
+            onClick={handleVolunteerClick}
+         >
             Become Volunteer
           </button>
         </div>

@@ -22,7 +22,7 @@ const Sidebar = () => {
   return (
     <div
       className={`${
-        open ? "w-72" : "w-20"
+        open ? "w-72" : "w-22"
       } flex flex-col justify-between duration-500 p-5 pt-8 bg-black relative`}
     >
       <div>
@@ -55,7 +55,7 @@ const Sidebar = () => {
                     : "text-gray-300 hover:bg-slate-900"
                 }`}
               >
-                <div className="">{<menu.icon className="w-10" />}</div>
+                <div className="">{<menu.icon className="w-15" />}</div>
                 <span
                   className={`${
                     !open ? "scale-x-0" : "scale-x-100"

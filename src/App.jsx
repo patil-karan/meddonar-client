@@ -23,6 +23,8 @@ import Checkout from "./components/Checkout";
 import PlaceOrder from "./components/PlaceOrder";
 import AllOrders from "./components/AllOrders";
 import ManageOrders from "./components/ManageOrders";
+import Donations from "./components/Donations";
+import HomeRemedies from "./components/HomeRemedies";
 
 function App() {
   const { token, role } = useSelector((state) => state.auth);
@@ -46,6 +48,9 @@ function App() {
           {token && (
             <Route path="/become-volunteer" element={<AddVolunteer />} />
           )}
+            {token && (
+            <Route path="/home-remedies" element={<HomeRemedies />} />
+          )}
           {token && (
             <Route path="/donate" element={<DonateMedicine />} />
           )}
@@ -64,6 +69,7 @@ function App() {
               <Route path="/admin/add-product" element={<AddProduct />} />
               <Route path="/admin/products" element={<Products />} />
               <Route path="/admin/orders" element={<ManageOrders />} />
+              <Route path="/admin/donations" element={<Donations />} />
               <Route
                 path="/admin/manage-product/:id"
                 element={<ManageProduct />}

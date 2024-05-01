@@ -1,5 +1,6 @@
 import React from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook from react-router-dom
 import { getAxiosInstance } from "../utility/axiosApiConfig";
 
 function classNames(...classes) {
@@ -7,6 +8,20 @@ function classNames(...classes) {
 }
 
 export default function DonateMedicine() {
+  // const navigate = useNavigate(); 
+  // const handleVolunteerClick = () => {
+  //   toast.success("Thank You For Donations!", {
+  //     position: "top-right",
+  //     autoClose: 3000, // Close the toast after 3 seconds
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //   });
+  //   navigate('/'); 
+  // };
+
   const axiosInstance = getAxiosInstance();
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
@@ -14,17 +29,19 @@ export default function DonateMedicine() {
 
     try {
       await axiosInstance
-        .post("http://localhost:8081/api/volunteer/add", {
-          firstName: formData.get("first-name"),
-          lastName: formData.get("last-name"),
-          gender: formData.get("gender"), // Corrected field name
+        .post("http://localhost:8081/api/users/donateMedicine", {
+          medicineName: formData.get("medicine-name"),
+          brand: formData.get("brand"),
+          power: formData.get("power"), // Corrected field name
+          quantity: formData.get("quantity"),
+          category: formData.get("category"),
           email: formData.get("email"),
-          mobile: formData.get("phone-number"),
-          details: formData.get("message"),
+          mobile: formData.get("mobile"),
+          donarDetail: formData.get("donarDetail"),
         })
         .then((res) => {
           if (res.status === 201) {
-            toast.success("Volunteer added successfully!", {
+            toast.success("Thank You for Donation!", {
               duration: 4000,
               position: "bottom-right",
             });
@@ -68,9 +85,10 @@ export default function DonateMedicine() {
               />
             </div>
           </div>
+
           <div>
             <label
-              htmlFor="last-name"
+              htmlFor="brand"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
               Brand
@@ -78,16 +96,51 @@ export default function DonateMedicine() {
             <div className="mt-2.5">
               <input
                 type="text"
-                name="last-name"
-                id="last-name"
+                name="brand"
+                id="brand"
                 autoComplete="family-name"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
+          <div>
+            <label
+              htmlFor="first-name"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
+              Medicine Power
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="number"
+                name="power"
+                id="power"
+                autoComplete="given-power"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              htmlFor="first-name"
+              className="block text-sm font-semibold leading-6 text-gray-900"
+            >
+              Medicine Quantity
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="number"
+                name="quantity"
+                id="quantity"
+                autoComplete="given-quantity"
+                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
           <div className="sm:col-span-2">
             <label
-              htmlFor="gender"
+              htmlFor="category"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
               Category
@@ -95,8 +148,8 @@ export default function DonateMedicine() {
             <div className="mt-2.5">
               <input
                 type="text"
-                name="gender"
-                id="gender"
+                name="category"
+                id="category"
                 autoComplete="organization"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -121,7 +174,7 @@ export default function DonateMedicine() {
           </div>
           <div className="sm:col-span-2">
             <label
-              htmlFor="phone-number"
+              htmlFor="mobile"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
               Phone number
@@ -129,8 +182,8 @@ export default function DonateMedicine() {
             <div className="relative mt-2.5">
               <input
                 type="tel"
-                name="phone-number"
-                id="phone-number"
+                name="mobile"
+                id="mobile"
                 autoComplete="tel"
                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -138,15 +191,15 @@ export default function DonateMedicine() {
           </div>
           <div className="sm:col-span-2">
             <label
-              htmlFor="message"
+              htmlFor="donarDetail"
               className="block text-sm font-semibold leading-6 text-gray-900"
             >
-              Volunteer details with location
+              Donar details with location
             </label>
             <div className="mt-2.5">
               <textarea
-                name="message"
-                id="message"
+                name="donarDetail"
+                id="donarDetail"
                 rows={4}
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 defaultValue={""}
@@ -158,6 +211,7 @@ export default function DonateMedicine() {
           <button
             type="submit"
             className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            // onClick={handleVolunteerClick} 
           >
             Donate Medicine
           </button>

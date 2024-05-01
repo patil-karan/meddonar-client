@@ -198,12 +198,12 @@ const Footer = () => {
           <div className="container mx-auto px-4">
             <div className="-mx-4 flex flex-wrap justify-between">
               <div className="px-4 w-full text-center mx-auto sm:w-auto sm:text-left">
-                Copyright © 2020
+                Copyright © 2023
                 <script>
-                  new Date().getFullYear() 2022 && document.write("- " + new
+                  new Date().getFullYear() 2023 && document.write("- " + new
                   Date().getFullYear())
                 </script>
-                - 2023 E-Commerce. All Rights Reserved.
+                - 2024 Med-Donar. All Rights Reserved.
               </div>
             </div>
           </div>

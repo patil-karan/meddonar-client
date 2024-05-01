@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  Typography,
-  Button,
-  Input,
-  Textarea,
-} from "@material-tailwind/react";
+import { Typography, Button, Input, Textarea } from "@material-tailwind/react";
 // import { PageTitle } from "../../widgets/layout";
 // import { TeamCard } from "../../widgets/cards";
 // import { teamData } from "../../../Data";
@@ -53,9 +48,9 @@ export function AboutUs() {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-6 font-black"
+                className="mb-6 font-white text-6xl"
               >
-                We focus on Simplifying healthcare & Impacting lives!
+                We focus on Simplifying Healthcare & Impacting lives!
               </Typography>
             </div>
           </div>
@@ -86,7 +81,7 @@ export function AboutUs() {
                 essential healthcare products. Together, we strive to meet the
                 healthcare needs of underserved communities."
               </Typography>
-              <Button variant="filled">read more</Button>
+              {/* <Button variant="filled">read more</Button> */}
             </div>
           </div>
         </div>
@@ -138,211 +133,7 @@ export function AboutUs() {
                       "
                     </span>
                   </p>
-                  <p className="mb-4 font-semibold text-blue-500">
-                    Summary 
-                    </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    <ul className="list-disc">
-                      <li >
-                        Pain and burning sensation in the chest, stomach or
-                        throat
-                      </li>
-                      <li>Flatulence or Gas Indigestion</li>
-                      <li>Bad Breath</li>
-                    </ul>
-                  </p>  
-                  {/* <ul className="flex justify-center md:justify-start">
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                  </ul> */}
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="mb-32 text-center md:text-left">
-          <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-            <div className="flex flex-wrap items-center">
-              <div className="w-full self-start shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
-                <div className="px-6 py-12 md:px-12">
-                  <h2 className="mb-2 text-3xl font-bold text-primary dark:text-primary-400  text-blue-800">
-                    Swollen Gums
-                  </h2>
-                  <p className="mb-4 text-gray-700">
-                    Swollen gums might feel abnormally bulging and protruding.
-                    It is a common problem where one or many triangle-shaped
-                    areas of gum between teeth swell. Gum diseases, also called
-                    periodontal diseases, affect the gums supporting the teeth.
-                    Swelling in the gums can be a symptom of underlying gum
-                    diseases, like gingivitis
-                  </p>
-                  <p className="mb-4 font-semibold text-blue-500 ">
-                    Symptoms of Swollen Gums Are:
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    <ul>Swelling and redness of gums </ul>
-                    <ul>Bad mouth odour </ul>
-                    <ul>Altered taste </ul>
-                    <ul>Loose teeth</ul>
-                  </p>
-                  <p className="mb-4 font-semibold text-blue-500 ">
-                    Common Causes of Swollen Gums:
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    <ul>Poor Oral Hygiene</ul>
-                    <ul>Poor Nutrition</ul>
-                    <ul>Dental Issues</ul>
-                  </p>
-                  <p className="mb-4 font-semibold text-blue-500  ">
-                    Home Remedies for Swollen Gums:
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    1. Kali Mirch (Black pepper):
-                    <br />
-                    You can grind some black pepper to make powder and use this
-                    powder with mustard oil to make a paste. This paste can be
-                    used to massage the teeth and gums to steer clear of dental
-                    problems like swollen gums
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    2. Clove Oil :
-                    <br />
-                    Clove oil helps prevent the growth and formation of
-                    bacteria, thereby preventing infections. Clove is also a
-                    good pain reliever and might help with pain associated with
-                    swollen gums.4 To use clove for gums, mince some cloves, and
-                    use a cotton swab or cotton ball to apply the powder to your
-                    gums. Let the powder sit on the gums for some time. Rinse
-                    the clove off your gums once done.
-                  </p>
-                  <ul className="flex justify-center md:justify-start">
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="block self-center w-full h-auto shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
-                <img
-                  src="https://etimg.etb2bimg.com/photo/89409588.cms"
-                  alt="Trendy Pants and Shoes"
-                  className="w-full h-96 object-cover bg-cover rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
-                />
               </div>
             </div>
           </div>
@@ -352,127 +143,123 @@ export function AboutUs() {
             <div className="flex flex-wrap items-center">
               <div className="block self-center w-full h-auto shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
                 <img
-                  src="https://img.freepik.com/free-vector/world-humanitarian-day-concept-illustration_114360-6458.jpg?size=626&ext=jpg&ga=GA1.1.87170709.1707436800&semt=ais"
+                  src="https://ik.imagekit.io/meddonar/meddonar/access.jpg?updatedAt=1714334074124"
                   alt="acidity"
                   className="w-full h-96 object-cover bg-cover rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
                 />
               </div>
               <div className="w-full self-start shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
                 <div className="px-6 py-12 md:px-12">
-                  <h2 className="mb-2 text-3xl font-bold text-primary dark:text-primary-400 text-blue-800">
-                    Acidity
+                  <h2 className="mb-2 text-3xl font-bold italic  text-primary dark:text-primary-400 text-blue-900">
+                    Access To Medications
                   </h2>
-                  <p className="mb-4 text-gray-700">
-                    Acid Reflux, commonly known as Acidity is a condition in
-                    which bile or stomach acids flow back into our oesophagus or
-                    food pipe and cause irritation.
-                  </p>
-                  <p className="mb-4 font-semibold text-blue-500">
-                    Symptoms of Acidity Are:
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    <ul>
-                      Pain and burning sensation in the chest, stomach or throat
-                    </ul>
-                    <ul>Flatulence or Gas Indigestion</ul>
-                    <ul>Bad Breath</ul>
-                  </p>
-                  <p className="mb-4 font-semibold text-blue-500 ">
-                    Common Causes of Acidity:
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    <ul>Over-eating</ul>
-                    <ul>Eating at odd times or skipping meals</ul>
-                    <ul>
-                      Unhealthy eating habits like having too much tea, coffee,
-                      cold- drinks, junk, spicy, oily food etc.
-                    </ul>
-                    <ul>
-                      A bad lifestyle like taking too much stress, sleeping
-                      less, smoking, drinking alcohol etc.
-                    </ul>
-                  </p>
-                  <p className="mb-4 font-semibold text-blue-500 ">
-                    Home Remedies for Acidity:
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    1. Fennel or Saunf Image Source:
+                  <p className=" leading-loose mb-4 text-oran-700 font-semibold italic">
+                    <span className="font-bold italic text-primary dark:text-primary-400 text-orange-800 ">
+                      "
+                    </span>
+                    Our initiative is dedicated to extending a helping hand to
+                    those who cannot afford vital medications. We recognize the
+                    pressing need for access to essential medicines,
+                    particularly among individuals and communities facing
+                    financial hardship. Our mission is centered on providing
+                    timely assistance to those who would otherwise struggle to
+                    obtain the medications they require. With a firm commitment
+                    to inclusivity and equity, we prioritize reaching
+                    underserved populations who lack the means to purchase
+                    essential medicines. Through our initiative, we aim to
+                    bridge the gap in healthcare access and ensure that no one
+                    is left behind during times of crisis or emergency. Our team
+                    works diligently to identify and respond to emergency
+                    situations swiftly, collaborating closely with local
+                    communities, healthcare providers, and relief organizations
+                    to distribute donated medicines where they are most needed.
+                    Join us in our mission to make a meaningful difference in
+                    emergency responses, providing essential medicines to those
+                    in need, regardless of their ability to pay.
                     <br />
-                    Having around 1 teaspoon fennel powder with a glass of warm
-                    water relieves acidity and its symptoms like heartburn,
-                    bloating and improves digestion.
-                  </p>
-                  <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                    2. Black Cumin Seeds:
+                    Our mission is centered on providing timely assistance to
+                    those who would otherwise struggle to obtain the medications
+                    they require. With a firm commitment to inclusivity and
+                    equity, we prioritize reaching underserved populations who
+                    lack the means to purchase essential medicines. Through our
+                    initiative, we aim to bridge the gap in healthcare access
+                    and ensure that no one is left behind during times of crisis
+                    or emergency. Our team works diligently to identify and
+                    respond to emergency situations swiftly, collaborating
+                    closely with local communities, healthcare providers, and
+                    relief organizations to distribute donated medicines where
+                    they are most needed.
                     <br />
-                    Chew cumin seeds directly or boil 1 teaspoon of them in a
-                    glass of water and drink it to relieve acidity. Black cumin
-                    seeds are gastro-protective. They are effective in reducing
-                    and preventing acidity and its symptoms like heartburn,
-                    pain, nausea, bloating, constipation etc
+                    Join us in our mission to make a meaningful difference in
+                    emergency responses, providing essential medicines to those
+                    in need, regardless of their ability to pay
+                    <span className="font-bold italic text-primary dark:text-primary-400 text-orange-800">
+                      "
+                    </span>
                   </p>
-                  <ul className="flex justify-center md:justify-start">
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                    <li>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 96 960 960"
-                        className="w-5 text-primary dark:text-primary-400"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"
-                        />
-                      </svg>
-                    </li>
-                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="mb-32 text-center md:text-left">
+          <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+            <div className="flex flex-wrap items-center">
+              <div className="block self-center w-full h-auto shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+                <img
+                  src="https://ik.imagekit.io/meddonar/meddonar/support.jpg?updatedAt=1714334255725"
+                  alt="acidity"
+                  className="w-full h-96 object-cover bg-cover rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                />
+              </div>
+              <div className="w-full self-start shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
+                <div className="px-6 py-12 md:px-12">
+                  <h2 className="mb-2 text-3xl font-bold italic  text-primary dark:text-primary-400 text-blue-900">
+                    Support Velnerable Populations
+                  </h2>
+                  <p className=" leading-loose mb-4 text-oran-700 font-semibold italic">
+                    <span className="font-bold italic text-primary dark:text-primary-400 text-orange-800 ">
+                      "
+                    </span>
+                    Our initiative is dedicated to extending a helping hand to
+                    those who cannot afford vital medications. We recognize the
+                    pressing need for access to essential medicines,
+                    particularly among individuals and communities facing
+                    financial hardship. Our mission is centered on providing
+                    timely assistance to those who would otherwise struggle to
+                    obtain the medications they require. With a firm commitment
+                    to inclusivity and equity, we prioritize reaching
+                    underserved populations who lack the means to purchase
+                    essential medicines. Through our initiative, we aim to
+                    bridge the gap in healthcare access and ensure that no one
+                    is left behind during times of crisis or emergency. Our team
+                    works diligently to identify and respond to emergency
+                    situations swiftly, collaborating closely with local
+                    communities, healthcare providers, and relief organizations
+                    to distribute donated medicines where they are most needed.
+                    Join us in our mission to make a meaningful difference in
+                    emergency responses, providing essential medicines to those
+                    in need, regardless of their ability to pay.
+                    <br />
+                    Our initiative is committed to extending assistance to
+                    individuals and communities unable to afford crucial
+                    medications. We acknowledge the urgent need for access to
+                    essential medicines, especially among those facing financial
+                    challenges. Our mission is focused on providing timely
+                    support to those struggling to obtain necessary medications.
+                    With a strong commitment to inclusivity and equity, we
+                    prioritize reaching underserved populations lacking the
+                    means to purchase essential medicines. Through our efforts,
+                    we strive to narrow the healthcare gap and ensure that no
+                    one is left behind during crises or emergencies. Our team
+                    actively identifies and responds to urgent situations,
+                    working closely with local communities, healthcare
+                    providers, and relief organizations to distribute donated
+                    medications where they are most needed.
+                    <span className="font-bold italic text-primary dark:text-primary-400 text-orange-800">
+                      "
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -507,7 +294,7 @@ export function AboutUs() {
           </div> */}
         </div>
       </section>
-      <section className="relative bg-white px-4">
+      {/* <section className="relative bg-white px-4">
         <div className="container mx-auto">
           <div className="flex justify-center items-center h-48 bg-blue-gray-900 mb-10">
             <Typography
@@ -520,7 +307,7 @@ export function AboutUs() {
             </Typography>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="relative bg-white px-4">
         <div className="container mx-auto">
           {/* <PageTitle
@@ -529,7 +316,7 @@ export function AboutUs() {
           >
             Fill out the form and expect our response within 24 hours.
           </PageTitle> */}
-          <form
+          {/* <form
             className="mx-auto w-full mt-12 lg:w-5/12"
             onSubmit={handleSubmit}
           >
@@ -569,7 +356,7 @@ export function AboutUs() {
             >
               Send Message
             </Button>
-          </form>
+          </form> */}
         </div>
       </section>
     </>

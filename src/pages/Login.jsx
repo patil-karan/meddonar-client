@@ -120,12 +120,12 @@ function Login() {
                   className="checkbox-item peer hidden"
                 />
               </div>
-              <Link
+              {/* <Link
                 to="/forgotpassword"
                 className="text-center text-red-600 hover:text-red-500"
               >
                 Forgot password?
-              </Link>
+              </Link> */}
             </div>
             {/* onClick={() => navigate("/")} */}
             <button

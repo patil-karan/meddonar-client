@@ -32,20 +32,22 @@ function AllOrders() {
             key={idx}
             className="flex items-center justify-between border p-2 md:px-8 md:py-4 bg-slate-200 space-x-10 rounded w-full"
           >
-            {/* <div className="w-1/6 flex"> */}
-              {/* <AvatarGroup max={4} total={Number(item.totalItem)}>
-                {item.orderItems.map((itemImg, id) => (
-                  <Avatar key={id} alt="" src={itemImg.product.imageUrl} />
-                ))}
-              </AvatarGroup> */}
-            {/* </div> */}
+            <div className="w-1/6 flex">
+            
+              <img
+                key={item.product.id}
+                alt=""
+                src={item.product.imageUrl}
+              />
+           
+            </div>
             <div>
               <h2 className="font-semibold">Order Id</h2>
               <p className="text-indigo-500">#{item?.id}</p>
             </div>
             <div>
               <h2 className="font-semibold">Power</h2>
-              <p className="text-indigo-500">#{item?.power}</p>
+              <p className="text-indigo-500">{item?.power}</p>
             </div>
             <div>
               <h2 className="font-semibold">Quantity</h2>
@@ -59,12 +61,12 @@ function AllOrders() {
               <h2 className="font-semibold">Order Status</h2>
               <p className="font-semibold">₹{item?.orderStatus}</p>
             </div>
-            {/* <Link
+            <Link
               to={`/orders/${item.id}`}
               className="block px-3 py-2 bg-indigo-500 text-white rounded"
             >
               View Order
-            </Link> */}
+            </Link>
           </div>
         ))}
       </div>

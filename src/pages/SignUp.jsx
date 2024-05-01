@@ -194,11 +194,11 @@ function SignUp() {
             <button className="w-full px-4 py-2 text-white font-medium bg-red-600 hover:bg-red-500 active:bg-red-600 rounded-lg duration-150">
               Sign Up
             </button>
-            <div className="text-center">
+            {/* <div className="text-center">
               <Link to="/forgotpassword" className="hover:text-red-600">
                 Forgot Password?
               </Link>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>

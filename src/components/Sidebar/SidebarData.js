@@ -1,5 +1,7 @@
-import { FaBriefcase,FaBriefcaseMedical,FaCartShopping  } from "react-icons/fa6";
+import { FaBriefcase,FaBriefcaseMedical,FaCartShopping }  from "react-icons/fa6";
 import { BiSolidDashboard } from "react-icons/bi";
+import { BsCapsule } from "react-icons/bs";
+
 
 export const menuItemsAdmin = [
   {
@@ -21,5 +23,10 @@ export const menuItemsAdmin = [
     title: "Orders",
     icon: FaCartShopping,
     path: "/admin/orders",
+  },
+  {
+    title: "Donations",
+    icon: BsCapsule,
+    path: "/admin/donations",
   },
 ];
